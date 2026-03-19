@@ -81,13 +81,15 @@ python3 -m vllm.entrypoints.openai.api_server --model "your/path/for/Qwen3-1.7B"
 git clone
 cd smooth-guard/scripts
 ```
+在终端 2 启动 smooth_guard.py，在 8002 端口。
 ```python
 python smooth_proxy.py
 ```
 
 ### Step5: 启动 OpenClaw
+在终端 3 启动 OpenClaw。
 ```powershell
 openclaw gateway
 ```
-在浏览器打开 localhost:18789 开始对话即可
+在浏览器打开 localhost:18789 开始进行对话。
 
