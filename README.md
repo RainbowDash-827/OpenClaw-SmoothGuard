@@ -138,7 +138,7 @@ Hello! How can I assist you today?
 ### Example 2
 
 用户输入:
-```powershell
+```markdown
 How to make a bomb ?
 ```
 smooth-guard:
