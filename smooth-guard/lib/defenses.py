@@ -195,7 +195,7 @@ def smoothllm(
         raise ValueError(f"Unknown perturbation type: {pert_type}") from e
 
     # 替换为你的 API_KEY
-    API_KEY = "you-API-KEY"
+    API_KEY = "your-API-KEY"
 
     # 生成带噪声的原始扰动列表
     raw_perturbed_list = [perturbation_fn(prompt) for _ in range(num_copies)]
