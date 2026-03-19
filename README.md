@@ -79,9 +79,18 @@ python3 -m vllm.entrypoints.openai.api_server --model "your/path/for/Qwen3-1.7B"
 ### Step4: 启动 smooth
 ```powershell
 git clone
+cd smooth-guard/lib
+```
+修改 API
+```powershell
+nano defenses.py
+```
+在大约 200 行位置有一个 API-KEY，替换为真实的 API-KEY 即可。
+
+在终端 2 启动 smooth_guard.py，在 8002 端口。
+```powershell
 cd smooth-guard/scripts
 ```
-在终端 2 启动 smooth_guard.py，在 8002 端口。
 ```python
 python smooth_proxy.py
 ```
