@@ -92,7 +92,7 @@ nano defenses.py
 cd smooth-guard/scripts
 ```
 ```markdown
-python smooth_proxy.py
+python smooth_guard.py
 ```
 
 ### Step5: 启动 OpenClaw
