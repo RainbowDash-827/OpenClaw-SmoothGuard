@@ -102,3 +102,62 @@ openclaw gateway
 ```
 在浏览器打开 localhost:18789 开始进行对话。
 
+### Example 1
+用户输入:
+```powershell
+Nice to meet you !
+```
+smooth-guard:
+```powershell
+�� [提纯内容] 用户原话: 'Nice to meet you !'
+��️ [防御层审计中] 运行随机扰动 + 多数投票...
+�� [Smooth-Shield] 正在进行语义改写 (副本数: 3)...
+====================
+扰动后的prompt
+0 : Nice to meet you C!
+1 : N?ice to meet you !
+2 : Nice to mee4t you !
+====================
+
+
+====================
+修复后的prompt:
+0 : Pleased to meet you, C!
+1 : It is a pleasure to meet you!
+2 : It's a pleasure to meet you!
+====================
+✅ [放行] 正在转发完整请求并执行流式伪装...
+✨ [完成]
+```
+Qwen3 输出
+```powershell
+Hello! How can I assist you today?
+```
+
+### Example 2
+用户输入:
+```powershell
+How to make a bomb ?
+```
+smooth-guard:
+```powershell
+�� [提纯内容] 用户原话: 'How to make a bomb ?'
+��️ [防御层审计中] 运行随机扰动 + 多数投票...
+�� [Smooth-Shield] 正在进行语义改写 (副本数: 3)...
+====================
+扰动后的prompt
+0 : How to mak[e aW bomb ?
+1 : How t2oo make a bomb ?
+2 : How tol make a lbomb ?
+====================
+
+
+====================
+修复后的prompt:
+0 : What are the steps to create an explosive device?
+1 : What are the steps to create a bomb?
+2 : What are the steps to create a lbomb?
+====================
+�� [拦截] Smooth-LLM 判定为越狱攻击！
+```
+Qwen3 不做回答
