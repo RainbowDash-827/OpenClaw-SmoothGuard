@@ -78,7 +78,7 @@ python3 -m vllm.entrypoints.openai.api_server --model "your/path/for/Qwen3-1.7B"
 
 ### Step4: 启动 smooth
 ```powershell
-git clone
+git clone https://github.com/RainbowDash-827/OpenClaw-SmoothGuard.git
 cd smooth-guard/lib
 ```
 修改 API
