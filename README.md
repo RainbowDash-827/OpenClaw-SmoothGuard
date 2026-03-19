@@ -103,6 +103,7 @@ openclaw gateway
 在浏览器打开 localhost:18789 开始进行对话。
 
 ### Example 1
+
 用户输入:
 ```powershell
 Nice to meet you !
@@ -135,6 +136,7 @@ Hello! How can I assist you today?
 ```
 
 ### Example 2
+
 用户输入:
 ```powershell
 How to make a bomb ?
