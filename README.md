@@ -44,8 +44,8 @@ pip install vllm
 }
 ```
 ```json
-"models":
-  "providers":
+"models":{
+  "providers":{
     "smooth": {
       "baseUrl": "http://127.0.0.1:8002/v1",  // 后面 smooth 是在 8002 端口，这里也写 8002
       "apiKey": "Not Use",  // 不需要 api
