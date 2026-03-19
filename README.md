@@ -3,8 +3,8 @@
 
 ### Step1: 环境配置
 ```python
-conda create -n smooth python=3.10 -y
-conda activate smooth
+conda create -n smooth-guard python=3.10 -y
+conda activate smooth-guard
 ```
 ```powershell
 pip install vllm
