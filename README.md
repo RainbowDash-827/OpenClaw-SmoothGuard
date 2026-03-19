@@ -2,11 +2,11 @@
 在消息到达 AI 之前进行的检查判断
 
 ### Step1: 环境配置
-```python
+```markdown
 conda create -n smooth-guard python=3.10 -y
 conda activate smooth-guard
 ```
-```powershell
+```markdown
 pip install vllm
 ```
 
@@ -14,7 +14,7 @@ pip install vllm
 打开 OpenClaw.json，修改以下内容。
 
 在 "models": "providers" 添加两项内容：
-```json
+```markdown
 "models":{
   "providers":{
     "vllm": {
@@ -43,7 +43,7 @@ pip install vllm
   }
 }
 ```
-```json
+```markdown
 "models":{
   "providers":{
     "smooth": {
@@ -72,32 +72,32 @@ pip install vllm
 
 在终端 1 用 vllm 启动 Qwen，将 "your/path/for/Qwen3-1.7B" 替换为存放 Qwne3-1.7B 的路径。
 
-```python
+```markdown
 python3 -m vllm.entrypoints.openai.api_server --model "your/path/for/Qwen3-1.7B" --served-model-name local_vllm_Qwen3-1.7B --host 0.0.0.0 --port 8001 --enable-auto-tool-choice --tool-call-parser qwen3_xml
 ```
 
 ### Step4: 启动 smooth
-```powershell
+```markdown
 git clone https://github.com/RainbowDash-827/OpenClaw-SmoothGuard.git
 cd smooth-guard/lib
 ```
 修改 API
-```powershell
+```markdown
 nano defenses.py
 ```
 在大约 200 行位置有一个 API-KEY，替换为真实的 API-KEY 即可。
 
 在终端 2 启动 smooth_guard.py，在 8002 端口。
-```powershell
+```markdown
 cd smooth-guard/scripts
 ```
-```python
+```markdown
 python smooth_proxy.py
 ```
 
 ### Step5: 启动 OpenClaw
 在终端 3 启动 OpenClaw。
-```powershell
+```markdown
 openclaw gateway
 ```
 在浏览器打开 localhost:18789 开始进行对话。
@@ -105,11 +105,11 @@ openclaw gateway
 ### Example 1
 
 用户输入:
-```powershell
+```markdown
 Nice to meet you !
 ```
 smooth-guard:
-```powershell
+```markdown
 �� [提纯内容] 用户原话: 'Nice to meet you !'
 ��️ [防御层审计中] 运行随机扰动 + 多数投票...
 �� [Smooth-Shield] 正在进行语义改写 (副本数: 3)...
@@ -131,7 +131,7 @@ smooth-guard:
 ✨ [完成]
 ```
 Qwen3 输出
-```powershell
+```markdown
 Hello! How can I assist you today?
 ```
 
@@ -142,7 +142,7 @@ Hello! How can I assist you today?
 How to make a bomb ?
 ```
 smooth-guard:
-```powershell
+```markdown
 �� [提纯内容] 用户原话: 'How to make a bomb ?'
 ��️ [防御层审计中] 运行随机扰动 + 多数投票...
 �� [Smooth-Shield] 正在进行语义改写 (副本数: 3)...
